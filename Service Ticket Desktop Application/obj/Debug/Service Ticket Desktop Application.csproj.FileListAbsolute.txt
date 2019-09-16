@@ -9,3 +9,6 @@ X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop 
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.csproj.CoreCompileInputs.cache
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.exe
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.pdb
+X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\bin\Debug\Newtonsoft.Json.dll
+X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\bin\Debug\Newtonsoft.Json.xml
+X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.csproj.CopyComplete
