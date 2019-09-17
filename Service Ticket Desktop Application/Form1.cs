@@ -22,7 +22,7 @@ namespace Service_Ticket_Desktop_Application
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            WebRequest webRequest = WebRequest.Create("http://localhost/client");
+            WebRequest webRequest = WebRequest.Create("http://localhost/client?phoneNumber=" + txtSearchPhoneNumber.Text);
 
             ASCIIEncoding encoding = new ASCIIEncoding();
             webRequest.Method = "GET";
@@ -35,10 +35,26 @@ namespace Service_Ticket_Desktop_Application
             String json = sr.ReadLine();
             Console.WriteLine(json);
             List<Client> clients = JsonConvert.DeserializeObject<List<Client>>(json);
-            foreach(Client client in clients)
+            lstExistingClients.Items.Clear();
+            foreach (Client client in clients)
             {
-                listBox1.Items.Add(client.lastName + ", " + client.firstName + ": " + client.phoneNumber);
+                lstExistingClients.Items.Add(client.firstName + " " + client.lastName);
             }
+            rdoExistingClient.Enabled = true;
+            rdoNewClient.Enabled = true;
+            rdoExistingClient.Checked = true;
+            txtPhoneNumber.Text = txtSearchPhoneNumber.Text;
+
+        }
+
+        private void RdoExistingClient_CheckedChanged(object sender, EventArgs e)
+        {
+            grpExistingClient.Enabled = rdoExistingClient.Checked;
+        }
+
+        private void RdoNewClient_CheckedChanged(object sender, EventArgs e)
+        {
+            grpNewClient.Enabled = rdoNewClient.Checked;
         }
     }
 }
