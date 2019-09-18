@@ -13,15 +13,15 @@ using System.Windows.Forms;
 
 namespace Service_Ticket_Desktop_Application
 {
-    public partial class Form1 : Form
+    public partial class frmNewTicket : Form
     {
         List<String> inventory = new List<String>();
-        public Form1()
+        public frmNewTicket()
         {
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnFindByPhone_Click(object sender, EventArgs e)
         {
             WebRequest webRequest = WebRequest.Create("http://localhost/client?phoneNumber=" + txtSearchPhoneNumber.Text);
 
@@ -58,17 +58,17 @@ namespace Service_Ticket_Desktop_Application
             grpNewClient.Enabled = rdoNewClient.Checked;
         }
 
-        private void Button6_Click(object sender, EventArgs e)
+        private void BtnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        private void BtnToday_Click(object sender, EventArgs e)
         {
             dteDateIn.Value = DateTime.Now;
         }
 
-        private void Button8_Click(object sender, EventArgs e)
+        private void BtnShowHidePassword_Click(object sender, EventArgs e)
         {
             char clearText = '\0';
             char mask = '*';
@@ -93,7 +93,7 @@ namespace Service_Ticket_Desktop_Application
             }
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             String item = txtInventoryItem.Text;
             inventory.Add(item);
@@ -102,7 +102,7 @@ namespace Service_Ticket_Desktop_Application
             txtInventoryItem.Focus();
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void BtnRemove_Click(object sender, EventArgs e)
         {
             int index = lstInventory.SelectedIndex;
             if (index != -1)
@@ -110,6 +110,11 @@ namespace Service_Ticket_Desktop_Application
                 inventory.RemoveAt(index);
             }
             updateInvenory();
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
