@@ -15,6 +15,7 @@ namespace Service_Ticket_Desktop_Application
 {
     public partial class Form1 : Form
     {
+        List<String> inventory = new List<String>();
         public Form1()
         {
             InitializeComponent();
@@ -55,6 +56,54 @@ namespace Service_Ticket_Desktop_Application
         private void RdoNewClient_CheckedChanged(object sender, EventArgs e)
         {
             grpNewClient.Enabled = rdoNewClient.Checked;
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            dteDateIn.Value = DateTime.Now;
+        }
+
+        private void Button8_Click(object sender, EventArgs e)
+        {
+            char clearText = '\0';
+            char mask = '*';
+            if (txtPassword.PasswordChar == clearText)
+            {
+                txtPassword.PasswordChar = mask;
+                btnShowHidePassword.Text = "Show";
+            } else
+            {
+                txtPassword.PasswordChar = clearText;
+                btnShowHidePassword.Text = "Hide";
+            }
+            
+        }
+
+        private void updateInvenory ()
+        {
+            lstInventory.Items.Clear();
+            foreach (String item in inventory)
+            {
+                lstInventory.Items.Add(item);
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            String item = txtInventoryItem.Text;
+            inventory.Add(item);
+            updateInvenory();
+            txtInventoryItem.Text = "";
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
