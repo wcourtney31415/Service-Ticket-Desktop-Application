@@ -99,11 +99,17 @@ namespace Service_Ticket_Desktop_Application
             inventory.Add(item);
             updateInvenory();
             txtInventoryItem.Text = "";
+            txtInventoryItem.Focus();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-
+            int index = lstInventory.SelectedIndex;
+            if (index != -1)
+            {
+                inventory.RemoveAt(index);
+            }
+            updateInvenory();
         }
     }
 }
