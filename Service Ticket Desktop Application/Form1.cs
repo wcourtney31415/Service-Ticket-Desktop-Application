@@ -152,7 +152,7 @@ namespace Service_Ticket_Desktop_Application
                     string json = JsonConvert.SerializeObject(client, Formatting.Indented);
                     Console.WriteLine(json);
                 }
-                
+                //Create new Ticket and include oid for this client
             }
             else if (rdoNewClient.Enabled)
             {
@@ -162,6 +162,7 @@ namespace Service_Ticket_Desktop_Application
                 client.phoneNumber = txtPhoneNumber.Text;
                 string json = JsonConvert.SerializeObject(client, Formatting.Indented);
                 Console.WriteLine(json);
+                //Create new Client, retrieve oid from it THEN create the new ticket and include the client oid.
             }
 
             
