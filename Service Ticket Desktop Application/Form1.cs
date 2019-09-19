@@ -132,6 +132,8 @@ namespace Service_Ticket_Desktop_Application
             lstExistingClients.Enabled = previousState;
             rdoExistingClient.Checked = false;
             rdoNewClient.Checked = false;
+            rdoExistingClient.Enabled = false;
+            rdoNewClient.Enabled = false;
             txtFirstName.Clear();
             txtLastName.Clear();
             txtPhoneNumber.Clear();
