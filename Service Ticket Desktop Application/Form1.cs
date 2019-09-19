@@ -110,7 +110,7 @@ namespace Service_Ticket_Desktop_Application
         private void BtnRemove_Click(object sender, EventArgs e)
         {
             int index = lstInventory.SelectedIndex;
-            if (index != -1)
+            if (index > -1)
             {
                 inventory.RemoveAt(index);
             }
@@ -137,6 +137,34 @@ namespace Service_Ticket_Desktop_Application
             txtPhoneNumber.Clear();
             
             txtInventoryItem.Clear();
+        }
+
+        private void BtnSubmit_Click(object sender, EventArgs e)
+        {
+
+
+            if (rdoExistingClient.Enabled)
+            {
+                int index = lstExistingClients.SelectedIndex;
+                if (index > -1)
+                {
+                    Client client = clients.ElementAt(index);
+                    string json = JsonConvert.SerializeObject(client, Formatting.Indented);
+                    Console.WriteLine(json);
+                }
+                
+            }
+            else if (rdoNewClient.Enabled)
+            {
+                Client client = new Client();
+                client.firstName = txtFirstName.Text;
+                client.lastName = txtLastName.Text;
+                client.phoneNumber = txtPhoneNumber.Text;
+                string json = JsonConvert.SerializeObject(client, Formatting.Indented);
+                Console.WriteLine(json);
+            }
+
+            
         }
     }
 }
