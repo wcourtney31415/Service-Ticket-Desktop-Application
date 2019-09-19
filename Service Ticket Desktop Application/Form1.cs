@@ -23,6 +23,7 @@ namespace Service_Ticket_Desktop_Application
         List<Client> clients = new List<Client>();
         private void UpdateClientList()
         {
+            lstExistingClients.Items.Clear();
             foreach (Client client in clients)
             {
                 lstExistingClients.Items.Add(client.firstName + " " + client.lastName);
@@ -125,7 +126,10 @@ namespace Service_Ticket_Desktop_Application
             updateInvenory();
             txtDescription.Clear();
             clients.Clear();
+            bool previousState = lstExistingClients.Enabled;
+            lstExistingClients.Enabled = true;
             UpdateClientList();
+            lstExistingClients.Enabled = previousState;
             rdoExistingClient.Checked = false;
             rdoNewClient.Checked = false;
             txtFirstName.Clear();
