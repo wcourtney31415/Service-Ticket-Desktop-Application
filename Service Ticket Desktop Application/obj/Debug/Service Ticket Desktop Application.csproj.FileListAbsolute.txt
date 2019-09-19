@@ -2,7 +2,6 @@ X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop 
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\bin\Debug\Service Ticket Desktop Application.exe
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\bin\Debug\Service Ticket Desktop Application.pdb
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.csprojAssemblyReference.cache
-X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service_Ticket_Desktop_Application.Form1.resources
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service_Ticket_Desktop_Application.Properties.Resources.resources
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.csproj.GenerateResource.cache
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.csproj.CoreCompileInputs.cache
@@ -11,3 +10,4 @@ X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop 
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\bin\Debug\Newtonsoft.Json.dll
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\bin\Debug\Newtonsoft.Json.xml
 X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service Ticket Desktop Application.csproj.CopyComplete
+X:\Portfolio Projects\Service Ticket Desktop Application\Service Ticket Desktop Application\obj\Debug\Service_Ticket_Desktop_Application.frmNewTicket.resources

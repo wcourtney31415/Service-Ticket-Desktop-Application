@@ -20,7 +20,14 @@ namespace Service_Ticket_Desktop_Application
         {
             InitializeComponent();
         }
-
+        List<Client> clients = new List<Client>();
+        private void UpdateClientList()
+        {
+            foreach (Client client in clients)
+            {
+                lstExistingClients.Items.Add(client.firstName + " " + client.lastName);
+            }
+        }
         private void BtnFindByPhone_Click(object sender, EventArgs e)
         {
             WebRequest webRequest = WebRequest.Create("http://localhost/client?phoneNumber=" + txtSearchPhoneNumber.Text);
@@ -35,12 +42,9 @@ namespace Service_Ticket_Desktop_Application
             StreamReader sr = new StreamReader(objWebResp);
             String json = sr.ReadLine();
             Console.WriteLine(json);
-            List<Client> clients = JsonConvert.DeserializeObject<List<Client>>(json);
+            clients = JsonConvert.DeserializeObject<List<Client>>(json);
             lstExistingClients.Items.Clear();
-            foreach (Client client in clients)
-            {
-                lstExistingClients.Items.Add(client.firstName + " " + client.lastName);
-            }
+            UpdateClientList();
             rdoExistingClient.Enabled = true;
             rdoNewClient.Enabled = true;
             rdoExistingClient.Checked = true;
@@ -114,7 +118,21 @@ namespace Service_Ticket_Desktop_Application
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-
+            txtSearchPhoneNumber.Clear();
+            dteDateIn.Value = DateTime.Now;
+            txtPassword.Clear();
+            inventory.Clear();
+            updateInvenory();
+            txtDescription.Clear();
+            clients.Clear();
+            UpdateClientList();
+            rdoExistingClient.Checked = false;
+            rdoNewClient.Checked = false;
+            txtFirstName.Clear();
+            txtLastName.Clear();
+            txtPhoneNumber.Clear();
+            
+            txtInventoryItem.Clear();
         }
     }
 }
